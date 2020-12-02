@@ -36,8 +36,9 @@ def password_is_valid_1(password, character, num_1, num_2):
 
     Returns True if policy is passed, False otherwise.
     """
+    # count how often does each character occurs
     counter = Counter(password)
-    character_count = counter.get(character, 0)
+    character_count = counter[character]  # defaults to zero if character doesn't exist at all
     return num_1 <= character_count <= num_2
 
 
@@ -58,7 +59,7 @@ def password_is_valid_2(password, character, num_1, num_2):
 
     Returns True if policy is passed, False otherwise.
     """
-    char_1 = password[num_1 - 1]
+    char_1 = password[num_1 - 1]  # position is 1-based, not 0-based as would be Python default
     char_2 = password[num_2 - 1]
 
     return (char_1 == character or char_2 == character) and char_1 != char_2

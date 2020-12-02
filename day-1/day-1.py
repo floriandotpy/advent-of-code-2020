@@ -19,6 +19,7 @@ def read_numbers(fname='input.txt'):
     Read numbers from file `fname` and return as a set of integers.
     """
     with open(fname) as fp:
+        # we use a set: efficient for quick lookup, and we don't care about order or duplicates
         numbers = set(int(num) for num in fp.readlines())
     return numbers
 
@@ -38,6 +39,7 @@ def find_triplet(numbers, target_sum):
     """
     Find the three numbers that sum to `target_sum` and return their product.
     """
+    # iterate through all pair combinations (cartesian product), so that we don't need to nest 2 loops
     for num_1, num_2 in product(numbers, numbers):
         partner_num = target_sum - num_2 - num_1
 
