@@ -1,4 +1,5 @@
-#!/env/python3
+#!/usr/bin/env python3
+
 """
 Read a list of passwords including individual password policies
 and count how many passwords pass their given policy.
