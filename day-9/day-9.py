@@ -28,11 +28,13 @@ def find_pair(numbers, target_sum):
 def find_invalid_number(numbers, n=25):
     """
     Check all numbers for being "valid". 
-    A "valid" number is a number that can be represented by the sum of any 2
-    of its preceding `n` numbers. Vice versa, an invalid number is a number
-    that does not fulfil this criterion.
+    A "valid" number is a number that can be represented
+    by the sum of any two numbers from its preceding `n` numbers.
+    Vice versa, an invalid number is a number that does not
+    fulfil this criterion.
 
-    Returns the first invalid number that's found in the list or None if no invalid number is found.
+    Returns the first invalid number that's found in the list
+    or None if no invalid number is found.
     """
     for i, num in enumerate(numbers[n:]):
         prev = set(numbers[i:n+i])
